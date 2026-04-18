@@ -10,7 +10,7 @@ const placeholders = [
 export const TestimonialPlaceholder = () => (
   <div>
     <p className="text-center text-xs text-muted-foreground mb-8 max-w-xl mx-auto">
-      هذه نماذج نصية مؤقتة يتم استبدالها لاحقًا بآراء حقيقية بعد موافقة العملاء.
+      سيتم استبدال هذه النماذج لاحقًا بآراء حقيقية بعد موافقة العملاء.
     </p>
     <div className="grid md:grid-cols-3 gap-5">
       {placeholders.map((p, i) => (
@@ -20,7 +20,7 @@ export const TestimonialPlaceholder = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: i * 0.08 }}
-          className="bg-card border border-border/60 rounded-2xl p-6 hover:shadow-card transition-shadow"
+          className="bg-card border border-border/60 rounded-2xl p-6 hover:shadow-card hover:-translate-y-1 hover:border-accent/30 transition-all"
         >
           <Quote className="size-8 text-accent/40 mb-4" />
           <p className="text-sm leading-loose text-foreground/85 mb-5">{p.text}</p>

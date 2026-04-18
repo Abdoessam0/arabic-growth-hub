@@ -16,10 +16,9 @@ const Contact = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
         <ContactCard icon={Mail} label="البريد الرسمي" value={contact.email} href={`mailto:${contact.email}`} ltr accent="accent" />
         <ContactCard icon={Mail} label="بريد الإدارة التنفيذية" value={contact.ceoEmail} href={`mailto:${contact.ceoEmail}`} ltr accent="primary" />
+        <ContactCard icon={MessageCircle} label="واتساب" value={contact.whatsappSA} href={waLink()} ltr accent="secondary" />
         <ContactCard icon={Globe} label="الموقع الإلكتروني" value={contact.domain} href={`https://${contact.domain}`} ltr accent="accent" />
-        <ContactCard icon={MessageCircle} label="واتساب السعودية" value={contact.whatsappSA} href={waLink("sa")} ltr accent="secondary" />
-        <ContactCard icon={MessageCircle} label="واتساب تركيا" value={contact.whatsappTR} href={waLink("tr")} ltr accent="primary" />
-        <ContactCard icon={MapPin} label="الموقع" value={contact.location} accent="accent" />
+        <ContactCard icon={MapPin} label="الموقع" value={contact.location} accent="primary" />
       </div>
 
       <div className="grid lg:grid-cols-5 gap-8 items-start">
@@ -38,13 +37,13 @@ const Contact = () => (
               <li>• ردّ سريع خلال يوم عمل</li>
             </ul>
             <div className="space-y-2 text-sm">
-              <a href={waLink("sa")} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
-                <span className="font-semibold">واتساب السعودية</span>
+              <a href={waLink()} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
+                <span className="font-semibold">واتساب مباشر</span>
                 <span dir="ltr" className="text-primary-foreground/80">{contact.whatsappSA}</span>
               </a>
-              <a href={waLink("tr")} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
-                <span className="font-semibold">واتساب تركيا</span>
-                <span dir="ltr" className="text-primary-foreground/80">{contact.whatsappTR}</span>
+              <a href={`mailto:${contact.email}`} className="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
+                <span className="font-semibold">بريد إلكتروني</span>
+                <span dir="ltr" className="text-primary-foreground/80 text-xs">{contact.email}</span>
               </a>
             </div>
           </div>

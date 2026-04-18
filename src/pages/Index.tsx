@@ -23,7 +23,14 @@ const whyUs = [
   "قابلية للتوسع والتطوير",
 ];
 
-const trustItems = ["استشارات أعمال", "تطوير مواقع", "أنظمة CRM", "حلول عقارية", "محاسبة وزكاة", "ترجمة وتوطين"];
+const trustItems: { label: string; tint: string; border: string; text: string; dot: string }[] = [
+  { label: "استشارات أعمال", tint: "bg-primary/5", border: "border-primary/20", text: "text-primary", dot: "bg-primary" },
+  { label: "تطوير مواقع", tint: "bg-accent/10", border: "border-accent/25", text: "text-accent", dot: "bg-accent" },
+  { label: "أنظمة CRM", tint: "bg-indigo-500/10", border: "border-indigo-500/25", text: "text-indigo-600", dot: "bg-indigo-500" },
+  { label: "حلول عقارية", tint: "bg-secondary/10", border: "border-secondary/25", text: "text-secondary", dot: "bg-secondary" },
+  { label: "محاسبة وزكاة", tint: "bg-gold/15", border: "border-gold/30", text: "text-gold", dot: "bg-gold" },
+  { label: "ترجمة وتوطين", tint: "bg-teal-500/10", border: "border-teal-500/25", text: "text-teal-600", dot: "bg-teal-500" },
+];
 
 const Index = () => (
   <>
@@ -33,12 +40,18 @@ const Index = () => (
     />
     <HeroSection />
 
-    {/* Trust strip */}
-    <section className="border-y border-border/60 bg-muted/30">
-      <div className="container container-px py-6 overflow-hidden">
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-sm text-muted-foreground">
+    {/* Trust strip — colored service pills */}
+    <section className="border-y border-border/60 bg-muted/20">
+      <div className="container container-px py-5">
+        <div className="flex flex-wrap justify-center items-center gap-2.5">
           {trustItems.map((t) => (
-            <span key={t} className="font-medium">{t}</span>
+            <span
+              key={t.label}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${t.tint} ${t.border} ${t.text} text-sm font-semibold transition-all hover:-translate-y-0.5 hover:shadow-card`}
+            >
+              <span className={`size-1.5 rounded-full ${t.dot}`} />
+              {t.label}
+            </span>
           ))}
         </div>
       </div>
@@ -233,7 +246,11 @@ const Index = () => (
 
     {/* Testimonials placeholder */}
     <section className="container container-px py-16">
-      <SectionHeader eyebrow="آراء العملاء" title="نماذج آراء توضيحية" />
+      <SectionHeader
+        eyebrow="آراء العملاء"
+        title="آراء عملائنا عن شركة Future Intelligen"
+        desc="نماذج من تجارب العملاء مع خدماتنا التقنية والاستشارية."
+      />
       <TestimonialPlaceholder />
     </section>
 

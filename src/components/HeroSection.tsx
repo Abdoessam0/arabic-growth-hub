@@ -27,7 +27,7 @@ export const HeroSection = () => (
       />
     </div>
 
-    <div className="container container-px pt-12 pb-20 lg:pt-20 lg:pb-32">
+    <div className="container container-px pt-10 pb-16 lg:pt-16 lg:pb-24">
       <div className="grid lg:grid-cols-12 gap-10 items-center">
         {/* Text */}
         <div className="lg:col-span-7 text-center lg:text-right">
@@ -45,12 +45,12 @@ export const HeroSection = () => (
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-primary leading-[1.25] mb-6"
+            className="font-heading font-extrabold text-primary mb-6 text-[2rem] sm:text-5xl lg:text-[3.5rem] leading-[1.55] sm:leading-[1.5] tracking-[0.005em]"
+            style={{ wordSpacing: "0.08em" }}
           >
-            نحوّل أفكارك إلى{" "}
-            <span className="text-gradient">حلول رقمية</span>
-            <br className="hidden sm:block" />
-            واستشارية ذكية
+            <span className="block">نحوّل أفكارك إلى</span>
+            <span className="block text-gradient mt-2">حلول رقمية</span>
+            <span className="block mt-2">واستشارية ذكية</span>
           </motion.h1>
 
           <motion.p
