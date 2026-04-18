@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { navigation } from "@/data/navigation";
 import { waLink } from "@/data/contact";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo-future-intelligen.png";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -28,11 +29,15 @@ export const Navbar = () => {
       )}
     >
       <div className="container container-px flex h-20 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="h-10 w-10 rounded-xl bg-hero-gradient grid place-items-center text-primary-foreground font-heading font-bold shadow-elegant">
-            FI
-          </div>
-          <div className="leading-tight">
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src={logo}
+            alt="Future Intelligen Logo"
+            width={48}
+            height={48}
+            className="h-11 w-11 object-contain"
+          />
+          <div className="leading-tight hidden sm:block">
             <div className="font-heading font-bold text-base text-primary">Future Intelligen</div>
             <div className="text-[11px] text-muted-foreground">شركة فيوتشر إنتليجنس</div>
           </div>
@@ -63,7 +68,7 @@ export const Navbar = () => {
             <Link to="/contact">تواصل معنا</Link>
           </Button>
           <Button asChild className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground gap-2">
-            <a href={waLink("sa")} target="_blank" rel="noopener noreferrer">
+            <a href={waLink()} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="size-4" />
               واتساب
             </a>
@@ -102,7 +107,7 @@ export const Navbar = () => {
                 <Link to="/contact">تواصل معنا</Link>
               </Button>
               <Button asChild className="flex-1 rounded-full bg-secondary text-secondary-foreground">
-                <a href={waLink("sa")} target="_blank" rel="noopener noreferrer">واتساب</a>
+                <a href={waLink()} target="_blank" rel="noopener noreferrer">واتساب</a>
               </Button>
             </div>
           </nav>

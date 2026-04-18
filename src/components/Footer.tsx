@@ -2,24 +2,30 @@ import { Link } from "react-router-dom";
 import { Mail, MessageCircle, Globe, MapPin } from "lucide-react";
 import { contact } from "@/data/contact";
 import { navigation } from "@/data/navigation";
+import logo from "@/assets/logo-future-intelligen-light.png";
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground mt-24">
-      <div className="container container-px py-16">
+    <footer className="bg-primary text-primary-foreground mt-20">
+      <div className="container container-px py-14">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="h-11 w-11 rounded-xl bg-gold-gradient grid place-items-center text-primary font-heading font-bold">
-                FI
-              </div>
+              <img
+                src={logo}
+                alt="Future Intelligen Logo"
+                width={56}
+                height={56}
+                loading="lazy"
+                className="h-14 w-14 object-contain"
+              />
               <div>
                 <div className="font-heading font-bold">Future Intelligen</div>
                 <div className="text-xs text-primary-foreground/70">شركة فيوتشر إنتليجنس</div>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/75 leading-loose">
-              شركة سعودية متخصصة في تقديم الحلول التقنية والاستشارية للشركات ورواد الأعمال، نساعدك على بناء أنظمة رقمية احترافية ودعم نموّك بثقة.
+              شركة سعودية متخصصة في تقديم الحلول التقنية والاستشارية، نساعد الشركات ورواد الأعمال على بناء أنظمة رقمية احترافية ودعم نموهم بثقة.
             </p>
           </div>
 
@@ -51,37 +57,55 @@ export const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold mb-4 text-base">تواصل معنا</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/80">
-              <li className="flex items-center gap-2">
-                <Globe className="size-4 text-accent shrink-0" />
-                <span dir="ltr">{contact.domain}</span>
+              <li className="flex items-start gap-2">
+                <MapPin className="size-4 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs text-primary-foreground/60 mb-0.5">الموقع</div>
+                  <div>{contact.location}</div>
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail className="size-4 text-accent shrink-0" />
-                <a href={`mailto:${contact.email}`} dir="ltr" className="hover:text-accent">{contact.email}</a>
+              <li className="flex items-start gap-2">
+                <Mail className="size-4 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs text-primary-foreground/60 mb-0.5">البريد الإلكتروني</div>
+                  <a href={`mailto:${contact.email}`} dir="ltr" className="hover:text-accent">{contact.email}</a>
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail className="size-4 text-accent shrink-0" />
-                <a href={`mailto:${contact.ceoEmail}`} dir="ltr" className="hover:text-accent">{contact.ceoEmail}</a>
+              <li className="flex items-start gap-2">
+                <Mail className="size-4 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs text-primary-foreground/60 mb-0.5">إيميل الإدارة</div>
+                  <a href={`mailto:${contact.ceoEmail}`} dir="ltr" className="hover:text-accent">{contact.ceoEmail}</a>
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <MessageCircle className="size-4 text-accent shrink-0" />
-                <a href={contact.whatsappSALink} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:text-accent">{contact.whatsappSA}</a>
+              <li className="flex items-start gap-2">
+                <MessageCircle className="size-4 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs text-primary-foreground/60 mb-0.5">واتساب</div>
+                  <a href={contact.whatsappSALink} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:text-accent">{contact.whatsappSA}</a>
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <MessageCircle className="size-4 text-accent shrink-0" />
-                <a href={contact.whatsappTRLink} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:text-accent">{contact.whatsappTR}</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="size-4 text-accent shrink-0" />
-                <span>{contact.location}</span>
+              <li className="flex items-start gap-2">
+                <Globe className="size-4 text-accent shrink-0 mt-0.5" />
+                <a href={`https://${contact.domain}`} dir="ltr" className="hover:text-accent">{contact.domain}</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/60">
-          <p>© {new Date().getFullYear()} Future Intelligen — جميع الحقوق محفوظة.</p>
-          <p>صُمم بعناية للسوق السعودي</p>
+          <p>© 2026 Future Intelligen — جميع الحقوق محفوظة.</p>
+          <p>
+            تم التصميم والتطوير بواسطة{" "}
+            <a
+              href={contact.designerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-accent hover:text-accent/80 transition-colors"
+            >
+              {contact.designerName}
+            </a>
+          </p>
         </div>
       </div>
     </footer>
