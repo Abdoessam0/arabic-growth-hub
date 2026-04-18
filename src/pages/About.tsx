@@ -46,8 +46,7 @@ const About = () => (
             <div className="h-px bg-white/15" />
             <div className="space-y-2 text-sm text-primary-foreground/85">
               <p>• خدمات تقنية واستشارية للشركات والأفراد</p>
-              <p>• المملكة العربية السعودية</p>
-              <p>• حضور إقليمي يشمل تركيا</p>
+              <p>• الرياض، المملكة العربية السعودية</p>
             </div>
           </div>
         </motion.div>
