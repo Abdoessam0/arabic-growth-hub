@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.lovable.dev/agent-skills/v1.json",
+  "_comment": "Agent Skills index for Future Intelligen. Each skill maps to a real, navigable URL on the public site. No fake backend endpoints. SHA-256 digests are placeholders — compute and pin them when content stabilizes.",
+  "version": "1.0.0",
+  "publisher": {
+    "name": "Future Intelligen",
+    "url": "https://futureintelligen.com/"
+  },
+  "skills": [
+    {
+      "name": "contact_company",
+      "type": "navigation",
+      "description": "Open the contact page with email, WhatsApp, and a contact form.",
+      "url": "https://futureintelligen.com/contact",
+      "sha256": "PLACEHOLDER_DIGEST"
+    },
+    {
+      "name": "browse_services",
+      "type": "navigation",
+      "description": "Browse the full catalog of technical, business, and real-estate services.",
+      "url": "https://futureintelligen.com/services",
+      "sha256": "PLACEHOLDER_DIGEST"
+    },
+    {
+      "name": "request_consultation",
+      "type": "external-link",
+      "description": "Start a WhatsApp conversation to request a consultation.",
+      "url": "https://wa.me/966508414332",
+      "sha256": "PLACEHOLDER_DIGEST"
+    },
+    {
+      "name": "browse_real_estate_services",
+      "type": "navigation",
+      "description": "View digital solutions for real-estate offices, developers, and brokers.",
+      "url": "https://futureintelligen.com/real-estate",
+      "sha256": "PLACEHOLDER_DIGEST"
+    },
+    {
+      "name": "browse_technology_services",
+      "type": "navigation",
+      "description": "View web development, CRM, dashboards, and API integration services.",
+      "url": "https://futureintelligen.com/technology",
+      "sha256": "PLACEHOLDER_DIGEST"
+    },
+    {
+      "name": "read_company_profile",
+      "type": "document",
+      "description": "Read a concise Markdown summary of the company.",
+      "url": "https://futureintelligen.com/index.md",
+      "sha256": "PLACEHOLDER_DIGEST"
+    }
+  ]
+}

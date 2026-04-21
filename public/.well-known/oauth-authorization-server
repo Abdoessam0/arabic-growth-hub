@@ -1,0 +1,6 @@
+{
+  "_comment": "PLACEHOLDER ONLY — Future Intelligen does NOT operate an OAuth 2.0 Authorization Server. This file exists for discovery completeness only. No endpoints listed are functional.",
+  "status": "not-active",
+  "issuer": "https://futureintelligen.com",
+  "service_documentation": "https://futureintelligen.com/agent-readiness"
+}

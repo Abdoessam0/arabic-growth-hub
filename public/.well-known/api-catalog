@@ -1,0 +1,38 @@
+{
+  "_comment": "API Catalog for Future Intelligen. Format inspired by RFC 9264 (linkset+json). Future-facing placeholder — no live API endpoints exist yet. Served as static JSON over HTTPS. To support full content negotiation (Accept: application/linkset+json), an edge/server layer is needed.",
+  "linkset": [
+    {
+      "anchor": "https://futureintelligen.com/",
+      "service-doc": [
+        {
+          "href": "https://futureintelligen.com/agent-readiness",
+          "type": "text/html",
+          "title": "Agent Readiness & Documentation"
+        },
+        {
+          "href": "https://futureintelligen.com/index.md",
+          "type": "text/markdown",
+          "title": "Markdown Site Summary"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://futureintelligen.com/.well-known/mcp/server-card.json",
+          "type": "application/json",
+          "title": "MCP Server Card (planned)"
+        },
+        {
+          "href": "https://futureintelligen.com/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Agent Skills Index"
+        }
+      ],
+      "sitemap": [
+        {
+          "href": "https://futureintelligen.com/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    }
+  ]
+}

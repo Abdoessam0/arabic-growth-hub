@@ -1,0 +1,7 @@
+{
+  "_comment": "PLACEHOLDER ONLY — Future Intelligen does NOT currently expose OAuth-protected resources. This file documents intent for future API protection. No live resource server exists yet.",
+  "status": "not-active",
+  "resource": "https://futureintelligen.com",
+  "authorization_servers": [],
+  "service_documentation": "https://futureintelligen.com/agent-readiness"
+}

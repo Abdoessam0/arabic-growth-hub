@@ -1,0 +1,38 @@
+{
+  "_comment": "MCP Server Card for Future Intelligen. STATUS: planned — no live MCP server endpoint exists yet. This file documents intent and provides discovery metadata. When a real MCP server is deployed, update 'transport.endpoint' and set 'status' to 'active'.",
+  "schemaVersion": "2025-06-18",
+  "status": "planned",
+  "serverInfo": {
+    "name": "future-intelligen-mcp",
+    "version": "0.1.0",
+    "description": "Planned MCP server for Future Intelligen — will expose company info, services catalog, and contact actions to AI agents.",
+    "vendor": "Future Intelligen",
+    "homepage": "https://futureintelligen.com/"
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": null,
+    "note": "Endpoint not yet provisioned. Static hosting (Hostinger) does not expose long-running processes; an edge function or external host is required."
+  },
+  "capabilities": {
+    "tools": {
+      "planned": [
+        "browse_services",
+        "request_consultation",
+        "get_company_profile",
+        "list_real_estate_offerings"
+      ]
+    },
+    "resources": {
+      "planned": [
+        "company_profile",
+        "service_catalog",
+        "contact_channels"
+      ]
+    },
+    "prompts": {}
+  },
+  "contact": {
+    "email": "info@futureintelligen.com"
+  }
+}
