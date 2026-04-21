@@ -9,6 +9,7 @@ import { TestimonialPlaceholder } from "@/components/TestimonialPlaceholder";
 import { StatsStrip } from "@/components/StatsStrip";
 import { servicesOverview } from "@/data/services";
 import { industries } from "@/data/industries";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/structuredData";
 import { motion } from "framer-motion";
 import { Check, Building2, Code2, ArrowLeft, Briefcase, Globe2, Database, Home, Calculator, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -37,6 +38,7 @@ const Index = () => (
     <SEO
       title="Future Intelligen | حلول تقنية واستشارية للشركات"
       description="شركة فيوتشر إنتليجنس تقدم حلولًا تقنية واستشارية تشمل تطوير المواقع، الأنظمة، الاستشارات العقارية، خدمات الأعمال، الترجمة، والدعم الفني."
+      jsonLd={[organizationJsonLd, websiteJsonLd]}
     />
     <HeroSection />
 
