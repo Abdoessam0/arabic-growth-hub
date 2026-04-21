@@ -1,0 +1,51 @@
+# Apache config for Hostinger shared hosting.
+# Hostinger runs Apache and respects per-directory .htaccess files.
+#
+# 1) SPA fallback — required so client-side routes like /agent-readiness
+#    don't 404 on direct visits / refresh.
+# 2) REAL HTTP Link headers — agent-discovery preferred over <link> tags.
+#    Requires mod_headers; if unavailable on the plan, the in-HTML
+#    <link rel="..."> tags injected by AgentLinks.tsx serve as fallback.
+# 3) MIME hints for the well-known files.
+
+# --- 1) SPA fallback ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # Don't rewrite real files / directories or well-known resources
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# --- 2) Link headers for agent discoverability (real HTTP headers) ---
+<IfModule mod_headers.c>
+  <FilesMatch "^(index\.html)?$">
+    Header append Link "</.well-known/api-catalog>; rel=\"api-catalog\""
+    Header append Link "</.well-known/mcp/server-card.json>; rel=\"mcp-server-card\""
+    Header append Link "</.well-known/agent-skills/index.json>; rel=\"agent-skills\""
+    Header append Link "</sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+    Header append Link "</index.md>; rel=\"alternate\"; type=\"text/markdown\""
+  </FilesMatch>
+</IfModule>
+
+# --- 3) Correct content types for agent files ---
+<IfModule mod_mime.c>
+  AddType application/json            .json
+  AddType application/xml             .xml
+  AddType text/markdown               .md
+  # Extensionless well-known files default to JSON in our case
+  <Files "api-catalog">
+    ForceType application/linkset+json
+  </Files>
+  <Files "openid-configuration">
+    ForceType application/json
+  </Files>
+  <Files "oauth-authorization-server">
+    ForceType application/json
+  </Files>
+  <Files "oauth-protected-resource">
+    ForceType application/json
+  </Files>
+</IfModule>

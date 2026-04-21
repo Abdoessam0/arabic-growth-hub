@@ -1,0 +1,6 @@
+{
+  "_comment": "PLACEHOLDER ONLY — Future Intelligen does NOT operate an OpenID Provider. This file exists for discovery completeness. Do not treat any field as a working endpoint. Remove or replace with real metadata once an Identity Provider is provisioned.",
+  "status": "not-active",
+  "issuer": "https://futureintelligen.com",
+  "service_documentation": "https://futureintelligen.com/agent-readiness"
+}

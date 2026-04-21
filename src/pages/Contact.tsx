@@ -6,10 +6,16 @@ import { ContactCard } from "@/components/ContactCard";
 import { Mail, MessageCircle, MapPin } from "lucide-react";
 import { contact, waLink } from "@/data/contact";
 import { CTASection } from "@/components/CTASection";
+import { organizationJsonLd } from "@/lib/structuredData";
 
 const Contact = () => (
   <>
-    <SEO title="تواصل معنا | Future Intelligen" description="تواصل مع Future Intelligen عبر البريد الإلكتروني أو واتساب للحصول على استشارة تقنية أو عقارية أو خدمات أعمال." path="/contact" />
+    <SEO
+      title="تواصل معنا | Future Intelligen"
+      description="تواصل مع Future Intelligen عبر البريد الإلكتروني أو واتساب للحصول على استشارة تقنية أو عقارية أو خدمات أعمال."
+      path="/contact"
+      jsonLd={organizationJsonLd}
+    />
     <PageHero tag="تواصل معنا" title="نحن هنا لخدمتك" desc="اختر القناة الأنسب للتواصل أو املأ النموذج وسنرد عليك خلال أقصر وقت ممكن." />
 
     <section className="container container-px py-12">
