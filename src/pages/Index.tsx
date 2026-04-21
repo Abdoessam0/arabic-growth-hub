@@ -10,7 +10,7 @@ import { StatsStrip } from "@/components/StatsStrip";
 import { servicesOverview } from "@/data/services";
 import { industries } from "@/data/industries";
 import { motion } from "framer-motion";
-import { Check, Building2, Code2, ArrowLeft } from "lucide-react";
+import { Check, Building2, Code2, ArrowLeft, Briefcase, Globe2, Database, Home, Calculator, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -23,13 +23,13 @@ const whyUs = [
   "قابلية للتوسع والتطوير",
 ];
 
-const trustItems: { label: string; tint: string; border: string; text: string; dot: string }[] = [
-  { label: "استشارات أعمال", tint: "bg-primary/5", border: "border-primary/20", text: "text-primary", dot: "bg-primary" },
-  { label: "تطوير مواقع", tint: "bg-accent/10", border: "border-accent/25", text: "text-accent", dot: "bg-accent" },
-  { label: "أنظمة CRM", tint: "bg-indigo-500/10", border: "border-indigo-500/25", text: "text-indigo-600", dot: "bg-indigo-500" },
-  { label: "حلول عقارية", tint: "bg-secondary/10", border: "border-secondary/25", text: "text-secondary", dot: "bg-secondary" },
-  { label: "محاسبة وزكاة", tint: "bg-gold/15", border: "border-gold/30", text: "text-gold", dot: "bg-gold" },
-  { label: "ترجمة وتوطين", tint: "bg-teal-500/10", border: "border-teal-500/25", text: "text-teal-600", dot: "bg-teal-500" },
+const trustItems = [
+  { label: "استشارات أعمال", icon: Briefcase, tint: "bg-primary/5", border: "border-primary/20", text: "text-primary" },
+  { label: "تطوير مواقع", icon: Globe2, tint: "bg-accent/10", border: "border-accent/25", text: "text-accent" },
+  { label: "أنظمة CRM", icon: Database, tint: "bg-indigo-500/10", border: "border-indigo-500/25", text: "text-indigo-600" },
+  { label: "حلول عقارية", icon: Home, tint: "bg-secondary/10", border: "border-secondary/25", text: "text-secondary" },
+  { label: "محاسبة وزكاة", icon: Calculator, tint: "bg-gold/15", border: "border-gold/30", text: "text-gold" },
+  { label: "ترجمة وتوطين", icon: Languages, tint: "bg-teal-500/10", border: "border-teal-500/25", text: "text-teal-600" },
 ];
 
 const Index = () => (
@@ -42,14 +42,14 @@ const Index = () => (
 
     {/* Trust strip — colored service pills */}
     <section className="border-y border-border/60 bg-muted/20">
-      <div className="container container-px py-5">
+      <div className="container container-px py-6">
         <div className="flex flex-wrap justify-center items-center gap-2.5">
           {trustItems.map((t) => (
             <span
               key={t.label}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${t.tint} ${t.border} ${t.text} text-sm font-semibold transition-all hover:-translate-y-0.5 hover:shadow-card`}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${t.tint} ${t.border} ${t.text} text-sm font-semibold transition-all hover:-translate-y-0.5 hover:shadow-card cursor-default`}
             >
-              <span className={`size-1.5 rounded-full ${t.dot}`} />
+              <t.icon className="size-4" />
               {t.label}
             </span>
           ))}
@@ -249,7 +249,7 @@ const Index = () => (
       <SectionHeader
         eyebrow="آراء العملاء"
         title="آراء عملائنا عن شركة Future Intelligen"
-        desc="نماذج من تجارب العملاء مع خدماتنا التقنية والاستشارية."
+        desc="ثقة عملائنا هي ما يدفعنا لتقديم حلول أفضل في كل مشروع."
       />
       <TestimonialPlaceholder />
     </section>

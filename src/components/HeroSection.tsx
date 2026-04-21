@@ -45,12 +45,12 @@ export const HeroSection = () => (
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="font-heading font-extrabold text-primary mb-6 text-[2rem] sm:text-5xl lg:text-[3.5rem] leading-[1.55] sm:leading-[1.5] tracking-[0.005em]"
-            style={{ wordSpacing: "0.08em" }}
+            className="font-heading font-extrabold text-primary mb-6 text-[1.85rem] sm:text-[2.6rem] lg:text-[3.25rem] leading-[1.7] sm:leading-[1.6] lg:leading-[1.55] tracking-[0.005em]"
+            style={{ wordSpacing: "0.12em" }}
           >
             <span className="block">نحوّل أفكارك إلى</span>
-            <span className="block text-gradient mt-2">حلول رقمية</span>
-            <span className="block mt-2">واستشارية ذكية</span>
+            <span className="block text-gradient mt-3">حلول رقمية</span>
+            <span className="block mt-3">واستشارية ذكية</span>
           </motion.h1>
 
           <motion.p

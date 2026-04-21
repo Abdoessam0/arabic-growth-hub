@@ -1,9 +1,9 @@
 import { Link, NavLink as RouterNavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/data/navigation";
-import { waLink } from "@/data/contact";
+import { waLink, contact } from "@/data/contact";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo-future-intelligen.png";
 
@@ -22,13 +22,39 @@ export const Navbar = () => {
   useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border/60 shadow-sm" : "bg-transparent"
-      )}
-    >
-      <div className="container container-px flex h-20 items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 w-full">
+      {/* Top corporate contact bar */}
+      <div className="hidden md:block bg-primary text-primary-foreground/90 text-xs">
+        <div className="container container-px flex h-9 items-center justify-between gap-6">
+          <div className="flex items-center gap-5">
+            <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+              <Mail className="size-3.5 text-accent" />
+              <span dir="ltr">{contact.email}</span>
+            </a>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+              <MessageCircle className="size-3.5 text-accent" />
+              <span dir="ltr">{contact.whatsappSA}</span>
+            </a>
+            <span className="hidden lg:inline-flex items-center gap-1.5 text-primary-foreground/75">
+              <MapPin className="size-3.5 text-accent" />
+              {contact.location}
+            </span>
+          </div>
+          <span className="text-primary-foreground/60 hidden lg:inline">
+            ساعات العمل: الأحد – الخميس
+          </span>
+        </div>
+      </div>
+
+      <div
+        className={cn(
+          "w-full transition-all duration-300",
+          scrolled
+            ? "bg-background/90 backdrop-blur-xl border-b border-border/60 shadow-sm"
+            : "bg-background/70 backdrop-blur-md border-b border-border/40"
+        )}
+      >
+      <div className="container container-px flex h-[72px] items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3 group">
           <img
             src={logo}
@@ -113,6 +139,7 @@ export const Navbar = () => {
           </nav>
         </div>
       )}
+      </div>
     </header>
   );
 };
