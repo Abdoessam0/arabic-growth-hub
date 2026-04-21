@@ -89,21 +89,24 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col items-center justify-center gap-3 text-center">
+        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col items-center justify-center gap-4 text-center">
           <p className="text-sm text-primary-foreground/70">
             © 2026 Future Intelligen — جميع الحقوق محفوظة.
           </p>
-          <p className="text-base text-primary-foreground/85">
-            تم التصميم والتطوير بواسطة{" "}
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-3 rounded-full bg-white/5 border border-gold/30 backdrop-blur-sm">
+            <span className="text-base sm:text-lg text-primary-foreground/90 font-medium">
+              تم التصميم والتطوير بواسطة
+            </span>
             <a
               href={contact.designerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-heading font-bold text-accent hover:text-accent/80 underline-offset-4 hover:underline transition-colors"
+              className="font-heading font-extrabold text-lg sm:text-xl text-gold hover:text-gold/80 underline underline-offset-4 decoration-gold/40 hover:decoration-gold transition-colors"
+              style={{ textShadow: "0 0 24px hsl(var(--gold) / 0.35)" }}
             >
-              {contact.designerName}
+              Abdo Kolay TEC
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>
