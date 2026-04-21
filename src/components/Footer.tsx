@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MessageCircle, Globe, MapPin } from "lucide-react";
+import { Mail, MessageCircle, MapPin } from "lucide-react";
 import { contact } from "@/data/contact";
 import { navigation } from "@/data/navigation";
 import logo from "@/assets/logo-future-intelligen-light.png";
@@ -85,23 +85,21 @@ export const Footer = () => {
                   <a href={contact.whatsappSALink} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:text-accent">{contact.whatsappSA}</a>
                 </div>
               </li>
-              <li className="flex items-start gap-2">
-                <Globe className="size-4 text-accent shrink-0 mt-0.5" />
-                <a href={`https://${contact.domain}`} dir="ltr" className="hover:text-accent">{contact.domain}</a>
-              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/60">
-          <p>© 2026 Future Intelligen — جميع الحقوق محفوظة.</p>
-          <p>
+        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col items-center justify-center gap-3 text-center">
+          <p className="text-sm text-primary-foreground/70">
+            © 2026 Future Intelligen — جميع الحقوق محفوظة.
+          </p>
+          <p className="text-base text-primary-foreground/85">
             تم التصميم والتطوير بواسطة{" "}
             <a
               href={contact.designerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-accent hover:text-accent/80 transition-colors"
+              className="font-heading font-bold text-accent hover:text-accent/80 underline-offset-4 hover:underline transition-colors"
             >
               {contact.designerName}
             </a>
