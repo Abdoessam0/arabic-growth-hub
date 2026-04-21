@@ -1,3 +1,8 @@
+# robots.txt for Future Intelligen
+# Fully implemented: standard crawl directives + Sitemap reference.
+# Static fallback: Content-Signal directives are emerging conventions —
+# served here as plain text. No CDN/edge support is required.
+
 User-agent: Googlebot
 Allow: /
 
@@ -12,3 +17,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://futureintelligen.com/sitemap.xml
+
+# Content-Signal directives (AI preferences)
+Content-Signal: ai-train=no, search=yes, ai-input=yes
