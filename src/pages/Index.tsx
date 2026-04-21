@@ -249,7 +249,7 @@ const Index = () => (
       <SectionHeader
         eyebrow="آراء العملاء"
         title="آراء عملائنا عن شركة Future Intelligen"
-        desc="نماذج من تجارب العملاء مع خدماتنا التقنية والاستشارية."
+        desc="ثقة عملائنا هي ما يدفعنا لتقديم حلول أفضل في كل مشروع."
       />
       <TestimonialPlaceholder />
     </section>
