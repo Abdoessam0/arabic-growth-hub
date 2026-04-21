@@ -3,7 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { ContactCard } from "@/components/ContactCard";
-import { Mail, MessageCircle, MapPin, Globe } from "lucide-react";
+import { Mail, MessageCircle, MapPin } from "lucide-react";
 import { contact, waLink } from "@/data/contact";
 import { CTASection } from "@/components/CTASection";
 
@@ -13,11 +13,10 @@ const Contact = () => (
     <PageHero tag="تواصل معنا" title="نحن هنا لخدمتك" desc="اختر القناة الأنسب للتواصل أو املأ النموذج وسنرد عليك خلال أقصر وقت ممكن." />
 
     <section className="container container-px py-12">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-        <ContactCard icon={Mail} label="البريد الرسمي" value={contact.email} href={`mailto:${contact.email}`} ltr accent="accent" />
-        <ContactCard icon={Mail} label="بريد الإدارة التنفيذية" value={contact.ceoEmail} href={`mailto:${contact.ceoEmail}`} ltr accent="primary" />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <ContactCard icon={Mail} label="البريد الإلكتروني" value={contact.email} href={`mailto:${contact.email}`} ltr accent="accent" />
+        <ContactCard icon={Mail} label="إيميل الإدارة" value={contact.ceoEmail} href={`mailto:${contact.ceoEmail}`} ltr accent="primary" />
         <ContactCard icon={MessageCircle} label="واتساب" value={contact.whatsappSA} href={waLink()} ltr accent="secondary" />
-        <ContactCard icon={Globe} label="الموقع الإلكتروني" value={contact.domain} href={`https://${contact.domain}`} ltr accent="accent" />
         <ContactCard icon={MapPin} label="الموقع" value={contact.location} accent="primary" />
       </div>
 
