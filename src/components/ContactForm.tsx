@@ -4,8 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle2, Send } from "lucide-react";
+import { CheckCircle2, Send, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 const services = [
   "الحلول التقنية والبرمجية",
@@ -19,10 +21,11 @@ const services = [
 
 export const ContactForm = () => {
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs: Record<string, string> = {};
     if (!form.name.trim()) errs.name = "الاسم مطلوب";
@@ -31,9 +34,27 @@ export const ContactForm = () => {
     if (!form.service) errs.service = "اختر نوع الخدمة";
     if (!form.message.trim() || form.message.length < 10) errs.message = "الرسالة قصيرة جدًا";
     setErrors(errs);
-    if (Object.keys(errs).length === 0) {
+    if (Object.keys(errs).length > 0) return;
+
+    setSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: form,
+      });
+      if (error) throw error;
+      if (!data?.success) throw new Error("فشل الإرسال");
+
       setDone(true);
       setForm({ name: "", email: "", phone: "", service: "", message: "" });
+    } catch (err) {
+      console.error("Contact form submission failed:", err);
+      toast({
+        title: "تعذّر إرسال الرسالة",
+        description: "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -95,9 +116,9 @@ export const ContactForm = () => {
         {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
       </div>
 
-      <Button type="submit" size="lg" className="w-full rounded-full bg-primary hover:bg-primary-glow gap-2">
-        <Send className="size-4" />
-        إرسال الرسالة
+      <Button type="submit" size="lg" disabled={submitting} className="w-full rounded-full bg-primary hover:bg-primary-glow gap-2 disabled:opacity-70">
+        {submitting ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
+        {submitting ? "جارٍ الإرسال..." : "إرسال الرسالة"}
       </Button>
     </form>
   );
