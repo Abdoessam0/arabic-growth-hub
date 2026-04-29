@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MessageCircle, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { contact } from "@/data/contact";
 import { navigation } from "@/data/navigation";
 import logo from "@/assets/logo-future-intelligen-light.png";
@@ -48,7 +48,7 @@ export const Footer = () => {
               <li><Link to="/technology" className="hover:text-accent">الحلول التقنية</Link></li>
               <li><Link to="/real-estate" className="hover:text-accent">الاستشارات العقارية</Link></li>
               <li><Link to="/services" className="hover:text-accent">استشارات الأعمال</Link></li>
-              <li><Link to="/services" className="hover:text-accent">المحاسبة والزكاة</Link></li>
+              <li><Link to="/services" className="hover:text-accent">الإدارة المالية</Link></li>
               <li><Link to="/services" className="hover:text-accent">الترجمة والتوطين</Link></li>
               <li><Link to="/services" className="hover:text-accent">الدعم الفني</Link></li>
             </ul>
@@ -76,13 +76,6 @@ export const Footer = () => {
                 <div>
                   <div className="text-xs text-primary-foreground/60 mb-0.5">إيميل الإدارة</div>
                   <a href={`mailto:${contact.ceoEmail}`} dir="ltr" className="hover:text-accent">{contact.ceoEmail}</a>
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <MessageCircle className="size-4 text-accent shrink-0 mt-0.5" />
-                <div>
-                  <div className="text-xs text-primary-foreground/60 mb-0.5">واتساب</div>
-                  <a href={contact.whatsappSALink} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:text-accent">{contact.whatsappSA}</a>
                 </div>
               </li>
             </ul>
