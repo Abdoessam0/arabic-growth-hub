@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { AgentLinks } from "@/components/AgentLinks";
 import { WebMCPProvider } from "@/components/WebMCPProvider";
 
@@ -14,6 +13,5 @@ export const Layout = () => (
       <Outlet />
     </main>
     <Footer />
-    <FloatingWhatsApp />
   </div>
 );
