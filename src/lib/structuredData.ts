@@ -28,7 +28,6 @@ export const organizationJsonLd = {
       "@type": "ContactPoint",
       contactType: "customer support",
       email: contact.email,
-      telephone: contact.whatsappSA,
       areaServed: "SA",
       availableLanguage: ["Arabic", "English"],
     },
