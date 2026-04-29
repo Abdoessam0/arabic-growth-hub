@@ -150,8 +150,8 @@ function userConfirmationHtml(d: ContactPayload): string {
     <div style="padding:28px 24px;line-height:1.9;font-size:15px">
       <p>مرحباً ${name}،</p>
       <p>تم استلام رسالتك بنجاح، وسيقوم فريقنا بالرد عليك خلال يوم عمل.</p>
-      <p>إن كنت تحتاج رداً أسرع، يسعدنا التواصل عبر واتساب على الرقم:
-        <a href="https://wa.me/966508414332" style="color:#1e3a8a;font-weight:bold;text-decoration:none" dir="ltr">+966 50 841 4332</a>
+      <p>للاستفسارات يمكنك الرد مباشرة على هذا البريد أو مراسلتنا على
+        <a href="mailto:info@futureintelligen.com" style="color:#1e3a8a;font-weight:bold;text-decoration:none" dir="ltr">info@futureintelligen.com</a>.
       </p>
       <p style="margin-top:24px">مع تحيات فريق ${BRAND}</p>
     </div>
