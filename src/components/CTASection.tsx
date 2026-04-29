@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mail } from "lucide-react";
-import { contact, waLink } from "@/data/contact";
+import { Mail } from "lucide-react";
+import { contact } from "@/data/contact";
 import { motion } from "framer-motion";
 
 interface Props {
@@ -36,13 +36,8 @@ export const CTASection = ({
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Button asChild size="lg" className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground gap-2">
-            <a href={waLink()} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="size-5" /> تواصل عبر واتساب
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className={`rounded-full gap-2 ${variant === "dark" ? "bg-white/10 backdrop-blur border-white/30 text-white hover:bg-white/20 hover:text-white" : "border-primary/20"}`}>
             <a href={`mailto:${contact.email}`}>
-              <Mail className="size-5" /> أرسل بريدًا
+              <Mail className="size-5" /> تواصل عبر البريد الإلكتروني
             </a>
           </Button>
         </div>
