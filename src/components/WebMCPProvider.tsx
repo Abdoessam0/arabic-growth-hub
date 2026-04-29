@@ -29,8 +29,6 @@ declare global {
   }
 }
 
-const WHATSAPP_URL = "https://wa.me/966508414332";
-
 const tools: ToolDefinition[] = [
   {
     name: "open_contact_page",
@@ -66,15 +64,6 @@ const tools: ToolDefinition[] = [
     execute: async () => {
       window.location.assign("/about");
       return { ok: true, message: "Navigated to /about" };
-    },
-  },
-  {
-    name: "start_whatsapp_contact",
-    description: "Open a new tab to start a WhatsApp conversation with the company.",
-    inputSchema: { type: "object", properties: {} },
-    execute: async () => {
-      window.open(WHATSAPP_URL, "_blank", "noopener,noreferrer");
-      return { ok: true, message: "Opened WhatsApp" };
     },
   },
 ];

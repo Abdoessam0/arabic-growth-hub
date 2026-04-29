@@ -10,7 +10,7 @@
     {
       "name": "contact_company",
       "type": "navigation",
-      "description": "Open the contact page with email, WhatsApp, and a contact form.",
+      "description": "Open the contact page with email and a contact form.",
       "url": "https://futureintelligen.com/contact",
       "sha256": "PLACEHOLDER_DIGEST"
     },
@@ -19,13 +19,6 @@
       "type": "navigation",
       "description": "Browse the full catalog of technical, business, and real-estate services.",
       "url": "https://futureintelligen.com/services",
-      "sha256": "PLACEHOLDER_DIGEST"
-    },
-    {
-      "name": "request_consultation",
-      "type": "external-link",
-      "description": "Start a WhatsApp conversation to request a consultation.",
-      "url": "https://wa.me/966508414332",
       "sha256": "PLACEHOLDER_DIGEST"
     },
     {

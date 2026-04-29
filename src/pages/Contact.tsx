@@ -3,8 +3,8 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { ContactCard } from "@/components/ContactCard";
-import { Mail, MessageCircle, MapPin } from "lucide-react";
-import { contact, waLink } from "@/data/contact";
+import { Mail, MapPin } from "lucide-react";
+import { contact } from "@/data/contact";
 import { CTASection } from "@/components/CTASection";
 import { organizationJsonLd } from "@/lib/structuredData";
 
@@ -12,17 +12,16 @@ const Contact = () => (
   <>
     <SEO
       title="تواصل معنا | Future Intelligen"
-      description="تواصل مع Future Intelligen عبر البريد الإلكتروني أو واتساب للحصول على استشارة تقنية أو عقارية أو خدمات أعمال."
+      description="تواصل مع Future Intelligen عبر البريد الإلكتروني للحصول على استشارة تقنية أو عقارية أو خدمات أعمال."
       path="/contact"
       jsonLd={organizationJsonLd}
     />
-    <PageHero tag="تواصل معنا" title="نحن هنا لخدمتك" desc="اختر القناة الأنسب للتواصل أو املأ النموذج وسنرد عليك خلال أقصر وقت ممكن." />
+    <PageHero tag="تواصل معنا" title="نحن هنا لخدمتك" desc="تواصل معنا عبر البريد الإلكتروني فقط حالياً، أو املأ النموذج وسنرد عليك خلال يوم عمل." />
 
     <section className="container container-px py-12">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
         <ContactCard icon={Mail} label="البريد الإلكتروني" value={contact.email} href={`mailto:${contact.email}`} ltr accent="accent" />
         <ContactCard icon={Mail} label="إيميل الإدارة" value={contact.ceoEmail} href={`mailto:${contact.ceoEmail}`} ltr accent="primary" />
-        <ContactCard icon={MessageCircle} label="واتساب" value={contact.whatsappSA} href={waLink()} ltr accent="secondary" />
         <ContactCard icon={MapPin} label="الموقع" value={contact.location} accent="primary" />
       </div>
 
@@ -42,13 +41,13 @@ const Contact = () => (
               <li>• ردّ سريع خلال يوم عمل</li>
             </ul>
             <div className="space-y-2 text-sm">
-              <a href={waLink()} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
-                <span className="font-semibold">واتساب مباشر</span>
-                <span dir="ltr" className="text-primary-foreground/80">{contact.whatsappSA}</span>
-              </a>
               <a href={`mailto:${contact.email}`} className="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
                 <span className="font-semibold">بريد إلكتروني</span>
                 <span dir="ltr" className="text-primary-foreground/80 text-xs">{contact.email}</span>
+              </a>
+              <a href={`mailto:${contact.ceoEmail}`} className="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
+                <span className="font-semibold">إيميل الإدارة</span>
+                <span dir="ltr" className="text-primary-foreground/80 text-xs">{contact.ceoEmail}</span>
               </a>
             </div>
           </div>
@@ -56,7 +55,7 @@ const Contact = () => (
       </div>
     </section>
 
-    <CTASection variant="dark" title="هل تريد الحديث مباشرة؟" text="فريقنا متاح للرد على استفساراتك عبر واتساب." />
+    <CTASection variant="dark" title="هل لديك استفسار؟" text="تواصل معنا عبر البريد الإلكتروني فقط حالياً وسنرد عليك خلال يوم عمل." />
   </>
 );
 

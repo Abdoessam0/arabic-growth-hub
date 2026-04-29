@@ -38,13 +38,12 @@ const AgentReadiness = () => (
           <h2 className="font-heading text-2xl font-bold text-primary mb-3">عن الشركة</h2>
           <p className="text-foreground/85 leading-loose mb-4">
             شركة سعودية متخصصة في الحلول التقنية والاستشارية، مقرّها الرياض. نقدّم تطوير المواقع
-            والأنظمة، الاستشارات العقارية، استشارات الأعمال، المحاسبة والزكاة، الترجمة والتوطين،
+            والأنظمة، الاستشارات العقارية، استشارات الأعمال، الإدارة المالية، الترجمة والتوطين،
             والدعم الفني.
           </p>
           <ul className="text-sm text-foreground/85 space-y-1.5">
             <li>البريد: <a className="text-accent hover:underline" href={`mailto:${contact.email}`}>{contact.email}</a></li>
             <li>إيميل الإدارة: <a className="text-accent hover:underline" href={`mailto:${contact.ceoEmail}`}>{contact.ceoEmail}</a></li>
-            <li>واتساب: <span dir="ltr">{contact.whatsappSA}</span></li>
             <li>الموقع: {contact.location}</li>
           </ul>
         </div>
@@ -59,7 +58,6 @@ const AgentReadiness = () => (
           <ul className="text-sm text-foreground/85 space-y-1.5">
             <li>Email: <a className="text-accent hover:underline" href={`mailto:${contact.email}`}>{contact.email}</a></li>
             <li>Executive: <a className="text-accent hover:underline" href={`mailto:${contact.ceoEmail}`}>{contact.ceoEmail}</a></li>
-            <li>WhatsApp: {contact.whatsappSA}</li>
             <li>Location: Riyadh, Saudi Arabia</li>
           </ul>
         </div>

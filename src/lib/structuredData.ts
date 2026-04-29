@@ -13,7 +13,7 @@ export const organizationJsonLd = {
   url: "https://futureintelligen.com/",
   email: contact.email,
   description:
-    "شركة سعودية متخصصة في الحلول التقنية والاستشارية: تطوير المواقع، الأنظمة، CRM، الاستشارات العقارية، استشارات الأعمال، المحاسبة والزكاة، الترجمة والتوطين، والدعم الفني.",
+    "شركة سعودية متخصصة في الحلول التقنية والاستشارية: تطوير المواقع، الأنظمة، CRM، الاستشارات العقارية، استشارات الأعمال، الإدارة المالية، الترجمة والتوطين، والدعم الفني.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Riyadh",
@@ -28,7 +28,6 @@ export const organizationJsonLd = {
       "@type": "ContactPoint",
       contactType: "customer support",
       email: contact.email,
-      telephone: contact.whatsappSA,
       areaServed: "SA",
       availableLanguage: ["Arabic", "English"],
     },
