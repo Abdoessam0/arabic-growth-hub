@@ -1,9 +1,9 @@
 import { Link, NavLink as RouterNavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle, Mail, MapPin } from "lucide-react";
+import { Menu, X, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/data/navigation";
-import { waLink, contact } from "@/data/contact";
+import { contact } from "@/data/contact";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo-future-intelligen.png";
 
@@ -31,17 +31,13 @@ export const Navbar = () => {
               <Mail className="size-3.5 text-accent" />
               <span dir="ltr">{contact.email}</span>
             </a>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
-              <MessageCircle className="size-3.5 text-accent" />
-              <span dir="ltr">{contact.whatsappSA}</span>
-            </a>
             <span className="hidden lg:inline-flex items-center gap-1.5 text-primary-foreground/75">
               <MapPin className="size-3.5 text-accent" />
               {contact.location}
             </span>
           </div>
           <span className="text-primary-foreground/60 hidden lg:inline">
-            ساعات العمل: الأحد – الخميس
+            تواصل معنا عبر البريد الإلكتروني فقط حالياً
           </span>
         </div>
       </div>
@@ -94,9 +90,9 @@ export const Navbar = () => {
             <Link to="/contact">تواصل معنا</Link>
           </Button>
           <Button asChild className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground gap-2">
-            <a href={waLink()} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="size-4" />
-              واتساب
+            <a href={`mailto:${contact.email}`}>
+              <Mail className="size-4" />
+              راسلنا
             </a>
           </Button>
         </div>
@@ -133,7 +129,7 @@ export const Navbar = () => {
                 <Link to="/contact">تواصل معنا</Link>
               </Button>
               <Button asChild className="flex-1 rounded-full bg-secondary text-secondary-foreground">
-                <a href={waLink()} target="_blank" rel="noopener noreferrer">واتساب</a>
+                <a href={`mailto:${contact.email}`}>راسلنا</a>
               </Button>
             </div>
           </nav>
