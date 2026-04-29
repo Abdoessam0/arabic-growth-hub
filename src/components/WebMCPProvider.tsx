@@ -29,8 +29,6 @@ declare global {
   }
 }
 
-const WHATSAPP_URL = "https://wa.me/966508414332";
-
 const tools: ToolDefinition[] = [
   {
     name: "open_contact_page",
