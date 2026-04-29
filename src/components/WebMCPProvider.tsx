@@ -66,15 +66,6 @@ const tools: ToolDefinition[] = [
       return { ok: true, message: "Navigated to /about" };
     },
   },
-  {
-    name: "start_whatsapp_contact",
-    description: "Open a new tab to start a WhatsApp conversation with the company.",
-    inputSchema: { type: "object", properties: {} },
-    execute: async () => {
-      window.open(WHATSAPP_URL, "_blank", "noopener,noreferrer");
-      return { ok: true, message: "Opened WhatsApp" };
-    },
-  },
 ];
 
 export const WebMCPProvider = () => {
