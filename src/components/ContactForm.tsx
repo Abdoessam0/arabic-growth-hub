@@ -50,7 +50,7 @@ export const ContactForm = () => {
       console.error("Contact form submission failed:", err);
       toast({
         title: "تعذّر إرسال الرسالة",
-        description: "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.",
+        description: "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى أو مراسلتنا على info@futureintelligen.com.",
         variant: "destructive",
       });
     } finally {
